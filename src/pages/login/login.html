@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content ng-controller="LoginPage" padding>
+
+	<ion-list>
+		<ion-item>
+			<ion-label stacked>Username</ion-label>
+			<ion-input type="text" [(ngModel)]="user.userName"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label stacked>Password</ion-label>
+			<ion-input type="password" [(ngModel)]="user.password"></ion-input>
+		</ion-item>
+	</ion-list>
+  
+	<button (click)="login(user);" [disabled]="user.password == '' || user.userName == ''" ion-button full>
+			Login
+	</button>
+  
+</ion-content>
